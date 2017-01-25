@@ -28,7 +28,7 @@ class Flight:
         return cls(
             origin=origin_data['origin'],
             dest=dest_data['destination'],
-            currench=flight_json['saleTotal'][:3],
+            currency=flight_json['saleTotal'][:3],
             price=flight_json['saleTotal'][3:],
             departure=parse_qpx_time(origin_data['departureTime']),
             arrival=parse_qpx_time(dest_data['arrivalTime']),
