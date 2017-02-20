@@ -16,7 +16,7 @@ with open("README.rst") as readme:
 if __name__ == "__main__":
     setup(
         name='PyFlightSearch',
-        version='0.1.0',
+        version='0.2.0',
         description='Generate a Webpage using results from coala',
         author="The coala developers",
         maintainer="Lasse Schuirmann",
