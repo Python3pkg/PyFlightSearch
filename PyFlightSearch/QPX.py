@@ -10,7 +10,13 @@ QPX_API_KEY = os.environ.get('QPX_API_KEY')
 QPX_HEADERS = {'Content-Type': 'application/json'}
 
 
-def search(origin: str, destination: str, date: datetime.date, adults: int=1):
+def search(
+        origin: str,
+        destination: str,
+        date: datetime.date,
+        adults: int=1,
+        limit: int=3,
+):
     url = ("https://www.googleapis.com/qpxExpress/v1/trips/search?key=" +
            QPX_API_KEY)
     data = {
@@ -26,7 +32,7 @@ def search(origin: str, destination: str, date: datetime.date, adults: int=1):
                 "date": date.isoformat(),
             }],
             "refundable": "false",
-            "solutions": 3
+            "solutions": limit,
         }
     }
 
